@@ -1,12 +1,12 @@
 import java.time.LocalDate;
 
-public class Nara extends Tarjeta {
-    public Nara(String marca, String nroTarjeta, String cardHolder, String fechaVencimiento){
-        super(marca,nroTarjeta,cardHolder,fechaVencimiento);
+public class Nara extends Marca {
+    public Nara(){
+       nombre = "Nara";
     }
 
     @Override
-    protected float calcularTasa() {
+    protected float calcularTasa(int mes,int año) {
         tasa = LocalDate.now().getDayOfMonth() * 0.5f;
         return tasa;
     }

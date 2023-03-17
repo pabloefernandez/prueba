@@ -1,13 +1,13 @@
 import java.time.LocalDate;
 
-public class Amex extends Tarjeta{
-    public Amex(String marca, String nroTarjeta, String cardHolder, String fechaVencimiento){
-        super(marca,nroTarjeta,cardHolder,fechaVencimiento);
+public class Amex extends Marca{
+    public Amex(){
+        nombre = "Amex";
     }
 
     @Override
-    protected float calcularTasa() {
-        tasa = mesVencimiento * 0.1f;
+    protected float calcularTasa(int mes,int año) {
+        tasa = mes * 0.1f;
         return tasa;
     }
 }
